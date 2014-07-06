@@ -9,6 +9,5 @@ namespace Ekyna\Bundle\ShipmentBundle\Event;
  */
 final class ShipmentEvents
 {
-    const PRE_STATE_CHANGE = 'ekyna_shipment.pre_state_updated';
-    const POST_STATE_CHANGE = 'ekyna_shipment.post_state_updated';
+    const STATE_CHANGE = 'ekyna_shipment.shipment.event.state_change';
 }
