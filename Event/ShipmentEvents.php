@@ -9,5 +9,5 @@ namespace Ekyna\Bundle\ShipmentBundle\Event;
  */
 final class ShipmentEvents
 {
-    const STATE_CHANGE = 'ekyna_shipment.shipment.event.state_change';
+    const STATE_CHANGE = 'ekyna_shipment.shipment.state_change';
 }
