@@ -9,8 +9,8 @@
         <property name="state">
             <constraint name="Choice">
                 <option name="callback">
-                    <value>Ekyna\Component\Sale\Shipment\ShipmentStates</value>
-                    <value>getStates</value></option>
+                    <value>Ekyna\Bundle\ShipmentBundle\Model\ShipmentStates</value>
+                    <value>getConstants</value></option>
             </constraint>
         </property>
         <property name="method">
