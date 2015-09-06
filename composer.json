@@ -22,11 +22,10 @@
         "ekyna/sale" : "0.3.*@dev"
     },
     "autoload" : {
-        "psr-0" : {
-            "Ekyna\\Bundle\\ShipmentBundle" : ""
+        "psr-4" : {
+            "Ekyna\\Bundle\\ShipmentBundle\\" : ""
         }
     },
-    "target-dir" : "Ekyna/Bundle/ShipmentBundle",
     "extra" : {
         "branch-alias" : {
             "dev-master" : "0.3.x-dev"
