@@ -18,17 +18,17 @@ final class ShipmentStates extends AbstractConstants
     static public function getConfig()
     {
         $prefix = 'ekyna_shipment.shipment.state.';
-        return array(
-            States::STATE_CHECKOUT    => array($prefix.States::STATE_CHECKOUT,    'default'),
-            States::STATE_ONHOLD      => array($prefix.States::STATE_ONHOLD,      'warning'),
-            States::STATE_PENDING     => array($prefix.States::STATE_PENDING,     'warning'),
-            States::STATE_BACKORDERED => array($prefix.States::STATE_BACKORDERED, 'warning'),
-            States::STATE_READY       => array($prefix.States::STATE_READY,       'success'),
-            States::STATE_SHIPPED     => array($prefix.States::STATE_SHIPPED,     'success'),
-            States::STATE_COMPLETED   => array($prefix.States::STATE_COMPLETED,   'success'),
-            States::STATE_RETURNED    => array($prefix.States::STATE_RETURNED,    'primary'),
-            States::STATE_CANCELLED   => array($prefix.States::STATE_CANCELLED,   'default'),
-        );
+        return [
+            States::STATE_CHECKOUT    => [$prefix.States::STATE_CHECKOUT,    'default'],
+            States::STATE_ONHOLD      => [$prefix.States::STATE_ONHOLD,      'warning'],
+            States::STATE_PENDING     => [$prefix.States::STATE_PENDING,     'warning'],
+            States::STATE_BACKORDERED => [$prefix.States::STATE_BACKORDERED, 'warning'],
+            States::STATE_READY       => [$prefix.States::STATE_READY,       'success'],
+            States::STATE_SHIPPED     => [$prefix.States::STATE_SHIPPED,     'success'],
+            States::STATE_COMPLETED   => [$prefix.States::STATE_COMPLETED,   'success'],
+            States::STATE_RETURNED    => [$prefix.States::STATE_RETURNED,    'primary'],
+            States::STATE_CANCELLED   => [$prefix.States::STATE_CANCELLED,   'default'],
+        ];
     }
 
     /**

@@ -34,10 +34,10 @@ class ShipmentExtension extends \Twig_Extension
      */
     public function getFunctions()
     {
-        return array(
-            new \Twig_SimpleFunction('get_shipment_state',  array($this, 'getShipmentState'), array('is_safe' => array('html'))),
-            new \Twig_SimpleFunction('render_shipment_state',  array($this, 'renderShipmentState'), array('is_safe' => array('html'))),
-        );
+        return [
+            new \Twig_SimpleFunction('get_shipment_state',  [$this, 'getShipmentState'], ['is_safe' => ['html']]),
+            new \Twig_SimpleFunction('render_shipment_state',  [$this, 'renderShipmentState'], ['is_safe' => ['html']]),
+        ];
     }
 
     /**
