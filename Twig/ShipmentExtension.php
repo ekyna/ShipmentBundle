@@ -32,38 +32,41 @@ class ShipmentExtension extends \Twig_Extension
     /**
      * {@inheritdoc}
      */
-    public function getFunctions()
+    public function getFilters()
     {
-        return [
-            new \Twig_SimpleFunction('get_shipment_state',  [$this, 'getShipmentState'], ['is_safe' => ['html']]),
-            new \Twig_SimpleFunction('render_shipment_state',  [$this, 'renderShipmentState'], ['is_safe' => ['html']]),
-        ];
+        return array(
+            new \Twig_SimpleFilter('shipment_state_label', [$this, 'getShipmentStateLabel'], ['is_safe' => ['html']]),
+            new \Twig_SimpleFilter('shipment_state_badge', [$this, 'getShipmentStateBadge'], ['is_safe' => ['html']]),
+        );
     }
 
     /**
-     * Renders the translated shipment state.
-     *
-     * @param string $state
-     * @return string
-     */
-    public function getShipmentState($state)
-    {
-        return $this->translator->trans(ShipmentStates::getLabel($state));
-    }
-
-    /**
-     * Renders the shipment state label.
+     * Returns the shipment state label.
      *
      * @param string|ShipmentInterface $stateOrShipment
      * @return string
      */
-    public function renderShipmentState($stateOrShipment)
+    public function getShipmentStateLabel($stateOrShipment)
     {
         $state = $stateOrShipment instanceof ShipmentInterface ? $stateOrShipment->getState() : $stateOrShipment;
+
+        return $this->translator->trans(ShipmentStates::getLabel($state));
+    }
+
+    /**
+     * Returns the shipment state badge.
+     *
+     * @param string|ShipmentInterface $stateOrShipment
+     * @return string
+     */
+    public function getShipmentStateBadge($stateOrShipment)
+    {
+        $state = $stateOrShipment instanceof ShipmentInterface ? $stateOrShipment->getState() : $stateOrShipment;
+
         return sprintf(
             '<span class="label label-%s">%s</span>',
             ShipmentStates::getTheme($state),
-            $this->getShipmentState($state)
+            $this->getShipmentStateLabel($state)
         );
     }
 
